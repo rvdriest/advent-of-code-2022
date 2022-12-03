@@ -1,5 +1,6 @@
 const fs = require("fs");
 
+// Part 1
 fs.readFile("input.txt", "utf-8", (err, data) => {
   const elves = data.split(/\n\n/);
 
