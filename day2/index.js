@@ -5,9 +5,7 @@ fs.readFile("input.txt", "utf-8", (err, data) => {
   let totalScore = 0;
 
   for (let i = 0; i < rounds.length; i++) {
-    const round = rounds[i].split(" ");
-    const opponentValue = round[0];
-    const myValue = round[1];
+    const [opponentValue, myValue] = rounds[i].split(" ");
     totalScore += calculateScore(opponentValue, myValue);
   }
   console.log(totalScore);
