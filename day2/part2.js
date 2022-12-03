@@ -1,16 +1,5 @@
 const fs = require("fs");
 
-fs.readFile("input.txt", "utf-8", (err, data) => {
-  const rounds = data.split(/\n/);
-  let totalScore = 0;
-
-  for (let i = 0; i < rounds.length; i++) {
-    const [opponentValue, outcome] = rounds[i].split(" ");
-    totalScore += calculateScore(opponentValue, outcome);
-  }
-  console.log(totalScore);
-});
-
 const valueMap = new Map();
 valueMap.set("Rock", 1);
 valueMap.set("Paper", 2);
@@ -53,3 +42,15 @@ function calculateScore(opponentValue, outcome) {
 
   return 6 + valueMap.get(winningValues.get(opponentValue));
 }
+
+function main() {
+  const rounds = fs.readFileSync("input.txt", "utf8").split(/\n/);
+  let totalScore = 0;
+  for (let i = 0; i < rounds.length; i++) {
+    const [opponentValue, outcome] = rounds[i].split(" ");
+    totalScore += calculateScore(opponentValue, outcome);
+  }
+  console.log(totalScore);
+}
+
+main();
