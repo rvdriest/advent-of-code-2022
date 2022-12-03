@@ -1,12 +1,12 @@
 const fs = require("fs");
 
 function main() {
-  const rugsacks = fs.readFileSync("input.txt", "utf8").split(/\n/);
+  const rucksacks = fs.readFileSync("input.txt", "utf8").split(/\n/);
 
   let priorityTotal = 0;
 
-  for (let i = 0; i < rugsacks.length; i++) {
-    const rugsack = rugsacks[i];
+  for (let i = 0; i < rucksacks.length; i++) {
+    const rugsack = rucksacks[i];
     const [firstCompartments, secondCompartments] = [
       rugsack.slice(0, rugsack.length / 2),
       rugsack.slice(rugsack.length / 2),
