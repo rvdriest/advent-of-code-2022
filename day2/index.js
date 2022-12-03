@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 fs.readFile("input.txt", "utf-8", (err, data) => {
-  const rounds = data.split(/\r?\n/);
+  const rounds = data.split(/\n/);
   let totalScore = 0;
 
   for (let i = 0; i < rounds.length; i++) {

@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 fs.readFile("input.txt", "utf-8", (err, data) => {
-  const elves = data.split("\n\n");
+  const elves = data.split(/\n\n/);
 
   let elveWithMostFood = {
     index: 0,
